@@ -19,7 +19,7 @@ const handleChange = ( evt, name ) => {
 
 watch(
   [
-    './backups'
+    './data'
   ],
   {
     recursive: true,
