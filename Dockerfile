@@ -1,7 +1,7 @@
-FROM alpine:3.10
+FROM mhart/alpine-node:13.0
 
 # Create an unprivileged user w/ home directory
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN addgroup -S appuser && adduser -S appuser -G appuser
 
 # Create app directory
 RUN mkdir -p /home/appuser/app
@@ -14,7 +14,7 @@ COPY . /home/appuser/app
 RUN npm install
 
 # Change ownership of the app to the unprivileged user
-RUN chown appgroup:appuser -R /home/appuser/app
+RUN chown appuser:appuser -R /home/appuser/app
 USER appuser
 
 # Run the command that starts the app
