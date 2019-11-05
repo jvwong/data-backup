@@ -1,4 +1,11 @@
 const watch = require('node-watch');
+const path = require('path');
+
+const {
+  DATA_DIRECTORY,
+  FACTOID_DATA_DIRECTORY
+} = require('./config');
+const DATA_PATH = path.resolve( __dirname, DATA_DIRECTORY );
 
 const uploadToStorageProvider = name => {
   console.log(`Uploading ${name} to some provider`);
@@ -19,7 +26,7 @@ const handleChange = ( evt, name ) => {
 
 watch(
   [
-    './data'
+    DATA_PATH
   ],
   {
     recursive: true,
