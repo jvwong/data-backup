@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "dropbox": "^4.0.30",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "node-fetch": "^2.6.0",
     "node-watch": "^0.6.3"
   }
